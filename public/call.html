@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0c0e">
+  <title>Hush — room</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell call">
+    <header class="topbar">
+      <a class="brand" href="/"><span class="logo"><i></i><i></i></span><span>Hush</span></a>
+      <div class="room-code" id="roomCode">------</div>
+    </header>
+
+    <section class="call-card">
+      <div class="voice-orb" id="voiceOrb"><span></span></div>
+      <div class="status-label" id="statusLabel">SECURE SESSION</div>
+      <h1 id="statusTitle">Подключение</h1>
+      <p id="statusText">Запрашиваем доступ к микрофону и готовим аудиосвязь.</p>
+      <div class="participants" id="participants">1 из 2 участников</div>
+
+      <div class="audio-panel">
+        <div class="audio-row">
+          <div>
+            <span class="control-title">Микрофон</span>
+            <span class="control-subtitle" id="micState">Включён</span>
+          </div>
+          <button id="micToggle" class="round-control active" type="button" aria-label="Включить или выключить микрофон">Микрофон</button>
+        </div>
+
+        <div class="audio-row">
+          <div>
+            <span class="control-title">Собеседник</span>
+            <span class="control-subtitle" id="remoteState">Звук включён</span>
+          </div>
+          <button id="remoteToggle" class="round-control active" type="button" aria-label="Заглушить или включить собеседника">Звук</button>
+        </div>
+
+        <label class="setting-row">
+          <span><strong>Шумоподавление</strong><small>Echo cancellation + noise suppression</small></span>
+          <input id="noiseToggle" type="checkbox" checked>
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+
+        <div class="device-grid">
+          <label>
+            <span>Микрофон</span>
+            <select id="microphoneSelect"><option value="">По умолчанию</option></select>
+          </label>
+          <label>
+            <span>Динамик</span>
+            <select id="speakerSelect"><option value="">По умолчанию</option></select>
+          </label>
+        </div>
+      </div>
+
+      <audio id="remoteAudio" autoplay playsinline></audio>
+      <audio id="localAudio" autoplay muted playsinline></audio>
+
+      <div class="call-actions">
+        <button id="copy" class="btn primary">Скопировать ссылку</button>
+        <button id="share" class="btn secondary">Поделиться</button>
+      </div>
+      <button id="leave" class="leave">Выйти из комнаты</button>
+      <div id="error" class="error" role="alert"></div>
+    </section>
+    <footer>Hush не записывает и не хранит историю звонков. Аудио передаётся через WebRTC.</footer>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/call.js"></script>
+</body>
+</html>
