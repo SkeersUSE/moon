@@ -1,0 +1,10 @@
+{
+  "name": "hush",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hush — minimal two-person room foundation for private voice calls.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": { "express": "^4.21.2", "socket.io": "^4.8.1", "helmet": "^8.0.0" }
+}
