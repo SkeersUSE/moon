@@ -1,1 +1,40 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0c0e"><title>Hush — private calls</title><link rel="stylesheet" href="/styles.css"></head><body><main class="shell home"><header class="topbar"><a class="brand" href="/" aria-label="Hush"><span class="logo" aria-hidden="true"><i></i><i></i></span><span>Hush</span></a><button id="theme" class="icon-btn" aria-label="Переключить тему">◐</button></header><section class="hero"><div class="eyebrow">PRIVATE VOICE ROOMS</div><h1>Разговоры без<br><em>лишнего шума.</em></h1><p>Создайте одноразовую комнату и отправьте ссылку собеседнику. Без аккаунтов, телефона и почты.</p><div class="actions"><button id="create" class="btn primary">Создать комнату <span>→</span></button><div class="join-row"><input id="code" maxlength="6" autocomplete="off" placeholder="Код приглашения" aria-label="Код приглашения"><button id="join" class="btn secondary">Присоединиться</button></div><div id="error" class="error" role="alert"></div></div></section><footer>Комнаты хранятся только в памяти сервера и исчезают после перезапуска.</footer></main><script src="/socket.io/socket.io.js"></script><script src="/app.js"></script></body></html>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0c0e">
+  <title>Hush — private calls</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell home">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Hush">
+        <span class="logo" aria-hidden="true"><i></i><i></i></span>
+        <span>Hush</span>
+      </a>
+      <button id="theme" class="icon-btn" aria-label="Переключить тему">◐</button>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">PRIVATE VOICE ROOMS</div>
+      <h1>Разговоры без<br><em>лишнего шума.</em></h1>
+      <p>Создайте одноразовую комнату и отправьте ссылку собеседнику. Без аккаунтов, телефона и почты.</p>
+      <div class="actions">
+        <button id="create" class="btn primary">Создать комнату <span>→</span></button>
+        <div class="join-row">
+          <input id="code" maxlength="6" autocomplete="off" placeholder="Код приглашения" aria-label="Код приглашения">
+          <button id="join" class="btn secondary">Присоединиться</button>
+        </div>
+        <div id="error" class="error" role="alert"></div>
+      </div>
+    </section>
+
+    <footer>Комнаты хранятся только в памяти сервера и исчезают после перезапуска.</footer>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
